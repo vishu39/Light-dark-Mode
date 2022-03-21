@@ -42,39 +42,36 @@ $app-dark-theme: mat-dark-theme($mat-primary-palette, $mat-accent-palette);
   }
 }
 
-$color: (
-  light: white,
-  dark: black,
+$light-theme: (
+  header: rgb(238, 236, 236),
+  bg: white,
+  clr: black,
+  button: blue,
 );
-$background-color: (
-  light: white,
-  dark: grey,
-);
-$container-color: (
-  light: rgb(238, 236, 236),
-  dark: black,
-  red-dark: red,
-  blue-dark: blue,
-  orange-dark: orange,
+$dark-theme: (
+  header: #000000,
+  bg: grey,
+  clr: white,
+  button: rgb(164, 252, 164),
 );
 
 body[theme="dark"] {
-  background-color: map-get($background-color, dark);
-  color: map-get($background-color, light);
+  background-color: map-get($dark-theme, bg);
+  color: map-get($dark-theme, clr);
   .toolbar {
-    background-color: map-get($container-color, dark);
-    color: map-get($container-color, light);
+    background-color: map-get($dark-theme, header);
+    color: map-get($dark-theme, clr);
   }
   // @include angular-material-theme($app-dark-theme);
   // background: grey;
   // color: white;
 }
 body[theme="light"] {
-  background-color: map-get($background-color, light);
-  color: map-get($background-color, dark);
+  background-color: map-get($light-theme, bg);
+  color: map-get($light-theme, clr);
   .toolbar {
-    background-color: map-get($container-color, light);
-    color: map-get($container-color, dark);
+    background-color: map-get($light-theme, header);
+    color: map-get($light-theme, clr);
   }
   // @include angular-material-theme($app-light-theme);
   // background: white;
