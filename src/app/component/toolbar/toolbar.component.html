@@ -1,6 +1,11 @@
 <mat-toolbar class="toolbar">
   <span>Light/Dark-Mode</span>
-  <button class="menuBtn" mat-button [matMenuTriggerFor]="menu">
+  <button
+    class="menuBtn"
+    mat-flat-button
+    color="accent"
+    [matMenuTriggerFor]="menu"
+  >
     Theme <mat-icon class="icon">keyboard_arrow_right</mat-icon>
   </button>
   <mat-menu #menu="matMenu">

@@ -1,9 +1,9 @@
 %btn {
-  height: 4rem;
-  width: 10%;
+  height: 3rem;
+  width: 8%;
   cursor: pointer;
   border: 0;
-  border-radius: 40px;
+  border-radius: 10px;
   font-size: 1.3rem;
 }
 .toolbar {
@@ -16,9 +16,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: aqua;
-    &:hover {
-      justify-content: space-evenly;
-    }
   }
 }

@@ -41,15 +41,44 @@ $app-dark-theme: mat-dark-theme($mat-primary-palette, $mat-accent-palette);
     color: black;
   }
 }
+
+$color: (
+  light: white,
+  dark: black,
+);
+$background-color: (
+  light: white,
+  dark: grey,
+);
+$container-color: (
+  light: rgb(238, 236, 236),
+  dark: black,
+  red-dark: red,
+  blue-dark: blue,
+  orange-dark: orange,
+);
+
 body[theme="dark"] {
-  @include angular-material-theme($app-dark-theme);
-  background: grey;
-  color: white;
+  background-color: map-get($background-color, dark);
+  color: map-get($background-color, light);
+  .toolbar {
+    background-color: map-get($container-color, dark);
+    color: map-get($container-color, light);
+  }
+  // @include angular-material-theme($app-dark-theme);
+  // background: grey;
+  // color: white;
 }
 body[theme="light"] {
-  @include angular-material-theme($app-light-theme);
-  background: white;
-  color: black;
+  background-color: map-get($background-color, light);
+  color: map-get($background-color, dark);
+  .toolbar {
+    background-color: map-get($container-color, light);
+    color: map-get($container-color, dark);
+  }
+  // @include angular-material-theme($app-light-theme);
+  // background: white;
+  // color: black;
 }
 
 html,
