@@ -1,0 +1,23 @@
+.form {
+  margin-top: 2rem;
+  form {
+    display: grid;
+    width: 100%;
+    justify-items: center;
+    grid-template-columns: repeat(2, 2fr);
+    .input {
+      width: 98%;
+    }
+    .inp {
+      width: 97%;
+      height: 1.5rem;
+      padding: 0.5rem;
+      border-radius: 40px;
+    }
+  }
+  .btn {
+    width: 100%;
+    height: 3rem;
+    margin-top: 1rem;
+  }
+}

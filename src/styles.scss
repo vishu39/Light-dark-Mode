@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/theming";
+@include mat-core();
+
+$mat-primary-scheme: (
+  100: #c5cae9,
+  500: #61699a,
+  700: #303f9f,
+  contrast: (
+    100: rgba(0, 0, 0, 0.87),
+    500: #ffffff,
+    700: #ffffff,
+  ),
+);
+$mat-accent-scheme: (
+  100: #ff80ab,
+  500: #ff4081,
+  700: #f50057,
+  contrast: (
+    100: rgba(0, 0, 0, 0.87),
+    500: rgba(0, 0, 0, 0.87),
+    700: #ffffff,
+  ),
+);
+$mat-primary-palette: mat-palette($mat-primary-scheme);
+$mat-accent-palette: mat-palette($mat-accent-scheme);
+
+$app-light-theme: mat-light-theme($mat-primary-palette, $mat-accent-palette);
+$app-dark-theme: mat-dark-theme($mat-primary-palette, $mat-accent-palette);
+
+@media (prefers-color-scheme: dark) {
+  body {
+    @include angular-material-theme($app-dark-theme);
+    background: grey;
+    color: white;
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    @include angular-material-theme($app-light-theme);
+    background: white;
+    color: black;
+  }
+}
+body[theme="dark"] {
+  @include angular-material-theme($app-dark-theme);
+  background: grey;
+  color: white;
+}
+body[theme="light"] {
+  @include angular-material-theme($app-light-theme);
+  background: white;
+  color: black;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
